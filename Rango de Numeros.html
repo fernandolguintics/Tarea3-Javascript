@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Rango de numeros</title>
+</head>
+<body>
+    <h2>Ingresa el rango minimo:</h2>
+    <input type="number" id="minimo" required>
+    <h2>Ingresa el rango maximo:</h2>
+    <input type="number" id="maximo" required>
+    <button onclick="crearRangoNumeros()">Generar lista de numeros</button>
+</body>
+<script>
+    function crearRangoNumeros(){
+        let minimo = document.getElementById('minimo').value
+        let maximo = document.getElementById("maximo").value
+        let body = document.getElementsByTagName('body')[0]
+        let numeros = []
+        while(minimo <= maximo){
+            numeros.push(minimo)
+            minimo ++
+        }
+        
+        numeros.forEach(function(num){
+            let h3 = document.createElement('h3')
+            let texto =document.createTextNode("Numero: " + num)
+            h3.appendChild(texto)
+            body.appendChild(h3)
+        })
+    }
+</script>
+</html>
